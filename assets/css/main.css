@@ -10071,3 +10071,89 @@ body.tw-magic-cursor #magic-cursor {
 }
 
 /*# sourceMappingURL=main.css.map */
+
+
+/* ==========================================================================
+   ULTRA-SMOOTH MOBILE RESPONSIVE & ANIMATION OVERRIDES
+   ========================================================================== */
+html, body {
+  overflow-x: hidden !important;
+  width: 100% !important;
+  max-width: 100% !important;
+  -webkit-overflow-scrolling: touch;
+}
+
+#smooth-wrapper, #smooth-content {
+  overflow-x: hidden !important;
+  width: 100% !important;
+}
+
+/* Mobile Hero Banner Optimization */
+@media screen and (max-width: 767px) {
+  .banner-three-area {
+    padding-block: 100px 50px !important;
+  }
+  .banner-three-title {
+    font-size: 72px !important;
+    line-height: 90% !important;
+    text-align: center;
+    word-break: break-word;
+  }
+  .banner-three-man {
+    inset-block-end: 20% !important;
+    width: 80% !important;
+    max-width: 320px !important;
+  }
+  .banner-three-man img {
+    max-width: 100% !important;
+    height: auto !important;
+    border-radius: 16px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+  }
+  .banner-three-left {
+    padding: 24px 20px !important;
+    margin-block-end: 40px !important;
+  }
+  .banner-three-left-title {
+    font-size: 24px !important;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .banner-three-title {
+    font-size: 54px !important;
+  }
+  .banner-three-man {
+    position: relative !important;
+    transform: none !important;
+    left: auto !important;
+    margin: 20px auto !important;
+    inset-block-end: 0 !important;
+    width: 100% !important;
+    text-align: center;
+  }
+  .banner-three-man img {
+    max-width: 280px !important;
+    margin: 0 auto;
+  }
+  .banner-three-center-title {
+    font-size: 32px !important;
+  }
+  .about-three-title {
+    font-size: 22px !important;
+    line-height: 1.4 !important;
+  }
+  .footer-three-bottom-title {
+    font-size: 48px !important;
+  }
+}
+
+/* Touch targets and smooth transitions for interactive elements */
+a, button {
+  touch-action: manipulation;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
