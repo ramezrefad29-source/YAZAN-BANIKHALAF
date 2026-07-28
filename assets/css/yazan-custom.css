@@ -360,9 +360,27 @@
   text-align: left !important;
 }
 
-/* ============================================
-   SPEED & SMOOTHNESS OPTIMIZATIONS
-   ============================================ */
+.cert-card {
+  transition: all 0.25s ease !important;
+  cursor: default;
+}
+
+.cert-card:hover {
+  background: rgba(255, 255, 255, 0.07) !important;
+  border-color: rgba(200, 164, 90, 0.6) !important;
+  transform: translateY(-3px) !important;
+  box-shadow: 0 10px 30px rgba(200, 164, 90, 0.15) !important;
+}
+
+[dir="rtl"] .cert-card,
+.rtl-mode .cert-card {
+  text-align: right !important;
+}
+
+[dir="rtl"] .cert-card .d-flex,
+.rtl-mode .cert-card .d-flex {
+  text-align: right !important;
+}
 [data-aos] {
   transition-duration: 0.35s !important;
 }
