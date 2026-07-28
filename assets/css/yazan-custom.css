@@ -268,8 +268,41 @@
   0%, 100% {
     box-shadow: 0 6px 20px rgba(37, 211, 102, 0.4);
   }
-  50% {
-    box-shadow: 0 6px 30px rgba(37, 211, 102, 0.7);
+
+/* ---- Floating Language Switcher (Right Above WhatsApp) ---- */
+.lang-float-btn {
+  position: fixed;
+  bottom: 100px;
+  left: 30px;
+  background: linear-gradient(135deg, #c8a45a 0%, #ffd700 100%);
+  color: #000;
+  border: none;
+  padding: 10px 18px;
+  border-radius: 30px;
+  font-weight: 800;
+  font-size: 0.95rem;
+  cursor: pointer;
+  z-index: 99999;
+  box-shadow: 0 6px 20px rgba(200, 164, 90, 0.5);
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  transition: all 0.3s ease;
+}
+
+.lang-float-btn:hover {
+  transform: scale(1.08);
+  box-shadow: 0 8px 25px rgba(200, 164, 90, 0.7);
+  color: #000;
+}
+
+@media (max-width: 480px) {
+  .lang-float-btn {
+    bottom: 80px;
+    left: 20px;
+    padding: 8px 14px;
+    font-size: 0.85rem;
   }
 }
+
 

@@ -343,6 +343,12 @@ function translatePage(lang) {
       ? '<i class="ph-bold ph-translate"></i> EN' 
       : '<i class="ph-bold ph-translate"></i> عربي';
   }
+  const floatBtn = document.getElementById('lang-float-btn');
+  if (floatBtn) {
+    floatBtn.innerHTML = lang === 'ar'
+      ? '<i class="ph-bold ph-translate"></i> English'
+      : '<i class="ph-bold ph-translate"></i> عربي';
+  }
   const toggleBtnMobile = document.getElementById('lang-toggle-btn-mobile');
   if (toggleBtnMobile) {
     toggleBtnMobile.innerHTML = lang === 'ar'
@@ -471,7 +477,17 @@ function injectRTLStyles() {
 function initI18n() {
   injectRTLStyles();
 
-  // Add language toggle button to header and mobile menu
+  // Create permanent Floating Language Button (Bottom Left, right above WhatsApp)
+  if (!document.getElementById('lang-float-btn')) {
+    const floatBtn = document.createElement('button');
+    floatBtn.id = 'lang-float-btn';
+    floatBtn.className = 'lang-float-btn';
+    floatBtn.onclick = toggleLanguage;
+    floatBtn.innerHTML = `<i class="ph-bold ph-translate"></i> عربي`;
+    document.body.appendChild(floatBtn);
+  }
+
+  // Add language toggle button to header as well
   const headerRight = document.querySelector('.header-right');
   if (headerRight && !document.getElementById('lang-toggle-btn')) {
     const toggleWrapper = document.createElement('div');
