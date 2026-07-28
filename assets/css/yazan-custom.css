@@ -269,40 +269,40 @@
     box-shadow: 0 6px 20px rgba(37, 211, 102, 0.4);
   }
 
-/* ---- Floating Language Switcher (Right Above WhatsApp) ---- */
+/* ---- Floating Language Switcher (Right Above WhatsApp / Bottom Fixed) ---- */
 .lang-float-btn {
-  position: fixed;
-  bottom: 100px;
-  left: 30px;
-  background: linear-gradient(135deg, #c8a45a 0%, #ffd700 100%);
-  color: #000;
-  border: none;
-  padding: 10px 18px;
-  border-radius: 30px;
-  font-weight: 800;
-  font-size: 0.95rem;
-  cursor: pointer;
-  z-index: 99999;
-  box-shadow: 0 6px 20px rgba(200, 164, 90, 0.5);
-  display: flex;
-  align-items: center;
-  gap: 6px;
-  transition: all 0.3s ease;
+  position: fixed !important;
+  bottom: 100px !important;
+  left: 20px !important;
+  background: linear-gradient(135deg, #c8a45a 0%, #ffd700 100%) !important;
+  color: #000000 !important;
+  border: 2px solid #ffffff !important;
+  padding: 12px 22px !important;
+  border-radius: 30px !important;
+  font-weight: 800 !important;
+  font-size: 1.05rem !important;
+  cursor: pointer !important;
+  z-index: 999999 !important;
+  box-shadow: 0 8px 25px rgba(255, 215, 0, 0.6) !important;
+  display: flex !important;
+  align-items: center !important;
+  gap: 8px !important;
+  transition: all 0.3s ease !important;
 }
 
 .lang-float-btn:hover {
-  transform: scale(1.08);
-  box-shadow: 0 8px 25px rgba(200, 164, 90, 0.7);
-  color: #000;
+  transform: scale(1.1) !important;
+  box-shadow: 0 10px 30px rgba(255, 215, 0, 0.9) !important;
 }
 
 @media (max-width: 480px) {
   .lang-float-btn {
-    bottom: 80px;
-    left: 20px;
-    padding: 8px 14px;
-    font-size: 0.85rem;
+    bottom: 85px !important;
+    left: 15px !important;
+    padding: 10px 18px !important;
+    font-size: 0.95rem !important;
   }
 }
+
 
 
