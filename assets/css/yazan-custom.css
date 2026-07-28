@@ -1,5 +1,5 @@
 /* ============================================
-   English with Yazan - Custom Styles
+   English with Yazan - Custom Styles & RTL Perfection
    ============================================ */
 
 /* ---- Globe Section ---- */
@@ -18,14 +18,14 @@
 
 /* ---- Course Detail Cards ---- */
 .course-detail-card {
-  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   cursor: default;
 }
 
 .course-detail-card:hover {
   transform: translateY(-4px);
-  box-shadow: 0 20px 60px rgba(200, 164, 90, 0.1);
-  border-color: rgba(200, 164, 90, 0.3) !important;
+  box-shadow: 0 20px 60px rgba(200, 164, 90, 0.15);
+  border-color: rgba(200, 164, 90, 0.4) !important;
 }
 
 .course-detail-card .cursor-pointer {
@@ -42,18 +42,57 @@
 }
 
 .course-detail-content {
-  transition: max-height 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+  transition: max-height 0.4s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .pricing-card {
-  transition: all 0.3s ease;
+  transition: all 0.25s ease;
 }
 
 .pricing-card:hover {
-  transform: translateY(-6px);
+  transform: translateY(-4px);
   background: rgba(255, 255, 255, 0.1) !important;
   box-shadow: 0 12px 40px rgba(200, 164, 90, 0.15);
   border-color: rgba(200, 164, 90, 0.4) !important;
+}
+
+/* ---- Quiz Styling & Instant Response ---- */
+.quiz-card {
+  background: linear-gradient(135deg, #161a2e 0%, #0d111e 100%) !important;
+  border: 1px solid rgba(200, 164, 90, 0.35) !important;
+  border-radius: 20px !important;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.8) !important;
+}
+
+.quiz-option-btn {
+  background: rgba(255, 255, 255, 0.05) !important;
+  border: 1px solid rgba(200, 164, 90, 0.25) !important;
+  color: #ffffff !important;
+  font-size: 1.05rem !important;
+  font-weight: 600 !important;
+  text-align: left;
+  transition: all 0.2s ease !important;
+  outline: none !important;
+  box-shadow: none !important;
+  width: 100% !important;
+  display: block !important;
+  border-radius: 12px !important;
+  cursor: pointer !important;
+}
+
+[dir="rtl"] .quiz-option-btn,
+.rtl-mode .quiz-option-btn {
+  text-align: right !important;
+}
+
+.quiz-option-btn:hover,
+.quiz-option-btn:focus,
+.quiz-option-btn:active {
+  background: linear-gradient(135deg, #c8a45a 0%, #ffd700 100%) !important;
+  color: #000000 !important;
+  border-color: #ffd700 !important;
+  box-shadow: 0 6px 20px rgba(255, 215, 0, 0.4) !important;
+  transform: translateY(-2px) !important;
 }
 
 /* ---- FAQ Section ---- */
@@ -83,7 +122,7 @@
 }
 
 .faq-section .accordion-item {
-  transition: all 0.3s ease;
+  transition: all 0.25s ease;
 }
 
 .faq-section .accordion-item:hover {
@@ -93,12 +132,8 @@
 
 /* ---- Hanging Photo Section ---- */
 @keyframes swing {
-  0%, 100% {
-    transform: rotate(-3deg);
-  }
-  50% {
-    transform: rotate(3deg);
-  }
+  0%, 100% { transform: rotate(-3deg); }
+  50% { transform: rotate(3deg); }
 }
 
 .hanging-photo-section {
@@ -136,84 +171,6 @@
   border-radius: 50%;
 }
 
-/* ---- Global Responsive Fixes ---- */
-
-/* ---- Mobile Responsiveness Perfection ---- */
-@media (max-width: 768px) {
-  #globe-container {
-    height: 380px !important;
-  }
-  
-  .hanging-frame img {
-    width: 200px !important;
-    height: 260px !important;
-  }
-  
-  .course-detail-card {
-    padding: 20px 16px !important;
-  }
-  
-  .pricing-card {
-    margin-bottom: 12px;
-  }
-  
-  .quiz-card {
-    padding: 20px 16px !important;
-  }
-  
-  .quiz-option-btn {
-    padding: 14px 16px !important;
-    font-size: 0.95rem !important;
-  }
-
-  .roadmap-step-card {
-    padding: 20px 16px !important;
-  }
-
-  .trusted-icon-card {
-    padding: 16px 12px !important;
-  }
-
-  .trusted-icon-card i {
-    font-size: 2.2rem !important;
-  }
-
-  #lang-toggle-btn {
-    padding: 6px 12px !original;
-    font-size: 0.85rem !important;
-  }
-
-  .service-three-thumb img {
-    width: 100% !important;
-    height: auto !important;
-    max-height: 220px !important;
-  }
-}
-
-@media (max-width: 480px) {
-  #globe-container {
-    height: 300px !important;
-  }
-  
-  .hanging-frame img {
-    width: 160px !important;
-    height: 210px !important;
-  }
-
-  .banner-three-title {
-    font-size: 1.8rem !important;
-    line-height: 1.3 !important;
-  }
-
-  .whatsapp-float {
-    width: 50px !important;
-    height: 50px !important;
-    font-size: 24px !important;
-    bottom: 20px !important;
-    left: 20px !important;
-  }
-}
-
 /* ---- Course Tags ---- */
 .portfolio-list ul li::after,
 .portfolio-list ul li::before {
@@ -226,40 +183,41 @@
   padding: 6px 16px;
   border-radius: 50px;
   display: inline-block;
-  transition: all 0.3s ease;
+  transition: all 0.25s ease;
 }
 
-/* ---- Enhanced Counters ---- */
-.banner-three-counter-item {
-  transition: all 0.3s ease;
-}
+/* ---- Floating Action Buttons (Fixed, Clean, Non-Overlapping) ---- */
 
-.banner-three-counter-item:hover {
-  transform: translateY(-4px);
-}
-
-/* ---- WhatsApp Float Button ---- */
-.whatsapp-float {
+/* WhatsApp Button (Bottom Left) */
+.whatsapp-float,
+[dir="rtl"] .whatsapp-float {
   position: fixed !important;
   bottom: 25px !important;
   left: 25px !important;
-  width: 58px !important;
-  height: 58px !important;
+  right: auto !important;
+  width: 56px !important;
+  height: 56px !important;
   background: #25D366 !important;
   border-radius: 50% !important;
   display: flex !important;
   align-items: center !important;
   justify-content: center !important;
-  color: white !important;
+  color: #ffffff !important;
   font-size: 28px !important;
   box-shadow: 0 6px 20px rgba(37, 211, 102, 0.5) !important;
   z-index: 999999 !important;
-  transition: all 0.3s ease !important;
-  animation: pulse-wa 2s infinite !important;
+  transition: transform 0.25s ease !important;
+  text-decoration: none !important;
 }
 
-/* ---- Floating Language Switcher (Directly Above WhatsApp Icon) ---- */
-.lang-float-btn {
+.whatsapp-float:hover {
+  transform: scale(1.1) !important;
+  color: #ffffff !important;
+}
+
+/* Floating Language Button (Bottom Left, Directly Above WhatsApp) */
+.lang-float-btn,
+[dir="rtl"] .lang-float-btn {
   position: fixed !important;
   bottom: 95px !important;
   left: 25px !important;
@@ -267,60 +225,70 @@
   background: linear-gradient(135deg, #c8a45a 0%, #ffd700 100%) !important;
   color: #000000 !important;
   border: 2px solid #ffffff !important;
-  padding: 10px 18px !important;
+  padding: 8px 16px !important;
   border-radius: 30px !important;
   font-weight: 800 !important;
-  font-size: 0.95rem !important;
+  font-size: 0.9rem !important;
   cursor: pointer !important;
   z-index: 999999 !important;
-  box-shadow: 0 8px 25px rgba(255, 215, 0, 0.8) !important;
+  box-shadow: 0 8px 25px rgba(255, 215, 0, 0.6) !important;
   display: flex !important;
   align-items: center !important;
   gap: 6px !important;
-  transition: all 0.3s ease !important;
+  transition: transform 0.25s ease !important;
 }
 
 .lang-float-btn:hover {
-  transform: scale(1.1) !important;
-  box-shadow: 0 10px 30px rgba(255, 215, 0, 1) !important;
+  transform: scale(1.08) !important;
 }
 
-@media (max-width: 480px) {
-  .whatsapp-float {
+/* Back To Top Button (Bottom Right - Never overlaps WhatsApp or Lang) */
+.back-to-top-wrapper,
+[dir="rtl"] .back-to-top-wrapper {
+  position: fixed !important;
+  bottom: 25px !important;
+  right: 25px !important;
+  left: auto !important;
+  z-index: 99999 !important;
+}
+
+/* Mobile Adjustments */
+@media (max-width: 768px) {
+  .whatsapp-float,
+  [dir="rtl"] .whatsapp-float {
     bottom: 20px !important;
     left: 20px !important;
-    width: 52px !important;
-    height: 52px !important;
+    width: 50px !important;
+    height: 50px !important;
     font-size: 24px !important;
   }
-  .lang-float-btn {
-    bottom: 82px !important;
+  .lang-float-btn,
+  [dir="rtl"] .lang-float-btn {
+    bottom: 80px !important;
     left: 20px !important;
-    padding: 8px 15px !important;
+    padding: 7px 14px !important;
     font-size: 0.85rem !important;
+  }
+  .back-to-top-wrapper,
+  [dir="rtl"] .back-to-top-wrapper {
+    bottom: 20px !important;
+    right: 20px !important;
   }
 }
 
 /* ============================================
-   RTL MODE FIXES — Hero Image + Testimonials + Layout
+   RTL MODE PERFECTION FIXES
    ============================================ */
 
-/* Fix hero photo staying centered in RTL */
-[dir="rtl"] .banner-three-man {
+/* Fix Hero Photo Staying Centered in RTL */
+[dir="rtl"] .banner-three-man,
+.rtl-mode .banner-three-man {
   left: 50% !important;
   right: auto !important;
   transform: translateX(-50%) !important;
   inset-inline-start: auto !important;
 }
 
-[dir="rtl"] .banner-three-man,
-.rtl-mode .banner-three-man {
-  left: 50% !important;
-  right: auto !important;
-  transform: translateX(-50%) !important;
-}
-
-/* Fix start-50 translate-middle-x in RTL */
 [dir="rtl"] .start-50 {
   left: 50% !important;
   right: auto !important;
@@ -330,14 +298,30 @@
   transform: translateX(-50%) !important;
 }
 
-/* Fix hero line shape centering */
 [dir="rtl"] .banner-three-line-shape {
   left: 50% !important;
   right: auto !important;
   transform: translateX(-50%) !important;
 }
 
-/* === TESTIMONIALS FIX IN RTL === */
+/* Fix Certifications List in RTL (Image 2) */
+[dir="rtl"] .feature-three-item,
+.rtl-mode .feature-three-item {
+  flex-direction: row-reverse !important;
+}
+
+[dir="rtl"] .feature-three-left,
+.rtl-mode .feature-three-left {
+  flex-direction: row-reverse !important;
+  gap: 20px !important;
+}
+
+[dir="rtl"] .feature-three-text,
+.rtl-mode .feature-three-text {
+  text-align: right !important;
+}
+
+/* Testimonials Fix in RTL (Image 1) */
 [dir="rtl"] .testimonial-three-active,
 [dir="rtl"] .testimonial-three-slider,
 [dir="rtl"] .swiper-container,
@@ -347,12 +331,10 @@
   direction: ltr !important;
   visibility: visible !important;
   opacity: 1 !important;
-  display: flex !important;
 }
 
 [dir="rtl"] .testimonial-three-content,
-[dir="rtl"] .testimonial-three-paragraph,
-[dir="rtl"] .testimonial-three-thumb {
+[dir="rtl"] .testimonial-three-paragraph {
   direction: rtl !important;
   text-align: right !important;
   visibility: visible !important;
@@ -363,35 +345,12 @@
   flex-direction: row-reverse !important;
 }
 
-[dir="rtl"] .testimonial-three-area {
-  overflow: visible !important;
+/* RTL Text Alignment */
+.rtl-mode, [dir="rtl"] {
+  font-family: 'Tajawal', 'Inter', sans-serif !important;
+  text-align: right;
 }
 
-/* Fix Swiper breaking in RTL */
-[dir="rtl"] .swiper {
-  direction: ltr !important;
-}
-
-[dir="rtl"] .swiper .swiper-slide {
-  direction: rtl !important;
-}
-
-/* === Fix marquee in RTL === */
-[dir="rtl"] .marquee,
-[dir="rtl"] .marquee_left {
-  direction: ltr !important;
-}
-
-/* === Fix certifications/features hover in RTL === */
-[dir="rtl"] .feature-three-item {
-  flex-direction: row-reverse !important;
-}
-
-[dir="rtl"] .feature-three-left {
-  flex-direction: row-reverse !important;
-}
-
-/* === General RTL text alignment === */
 [dir="rtl"] .text-start {
   text-align: right !important;
 }
@@ -401,87 +360,21 @@
   text-align: left !important;
 }
 
-/* Fix WhatsApp & Lang float in RTL — keep on left */
-[dir="rtl"] .whatsapp-float {
-  left: 25px !important;
-  right: auto !important;
-}
-
-[dir="rtl"] .lang-float-btn {
-  left: 25px !important;
-  right: auto !important;
-}
-
 /* ============================================
-   SPEED & SMOOTHNESS — Faster Animations
+   SPEED & SMOOTHNESS OPTIMIZATIONS
    ============================================ */
-
-/* Speed up ALL AOS animations */
 [data-aos] {
-  transition-duration: 0.4s !important;
+  transition-duration: 0.35s !important;
 }
 
-[data-aos][data-aos-duration="1000"] {
-  transition-duration: 0.4s !important;
-}
-
-[data-aos][data-aos-duration="1500"] {
-  transition-duration: 0.5s !important;
-}
-
-[data-aos][data-aos-duration="2000"] {
-  transition-duration: 0.5s !important;
-}
-
-/* Speed up all general transitions */
-* {
-  transition-duration: 0.25s !important;
-}
-
-/* Except specific things that need their own timing */
-.course-detail-content {
-  transition: max-height 0.35s cubic-bezier(0.4, 0, 0.2, 1) !important;
-}
-
-.preloader svg path {
-  transition-duration: 0.6s !important;
-}
-
-/* Faster hover effects */
-.pricing-card,
-.roadmap-step,
-.course-detail-card,
-.banner-three-counter-item,
-.faq-section .accordion-item,
-.hanging-frame,
-.trusted-icon-card {
-  transition: all 0.2s ease !important;
-}
-
-/* Faster page scroll smoothness */
-html {
-  scroll-behavior: smooth;
-}
-
-/* Speed up page load feel */
-.preloader {
-  transition: all 0.3s ease !important;
-}
-
-/* Reduce AOS delay globally */
-[data-aos-delay="200"] {
+[data-aos-delay] {
   transition-delay: 0.05s !important;
 }
 
-[data-aos-delay="300"] {
-  transition-delay: 0.1s !important;
+* {
+  transition-duration: 0.2s !important;
 }
 
-[data-aos-delay="400"] {
-  transition-delay: 0.15s !important;
-}
-
-/* Make swiper transitions faster */
-.swiper-wrapper {
-  transition-duration: 300ms !important;
+html {
+  scroll-behavior: smooth;
 }

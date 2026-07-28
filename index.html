@@ -444,9 +444,9 @@
                     <h3 class="text-white tw-text-2xl mb-4" id="quiz-question-text">How do you feel when you speak English with native speakers or in job interviews?</h3>
 
                     <div class="quiz-options d-flex flex-column gap-3 mb-4" id="quiz-options-container">
-                      <button class="btn btn-outline-light text-start p-3 tw-rounded-lg text-white" onclick="answerQuiz(1, 'A')">A) Very hesitant, I freeze or translate literally from Arabic in my head.</button>
-                      <button class="btn btn-outline-light text-start p-3 tw-rounded-lg text-white" onclick="answerQuiz(1, 'B')">B) I can speak basic sentences, but struggle with vocabulary & complex grammar.</button>
-                      <button class="btn btn-outline-light text-start p-3 tw-rounded-lg text-white" onclick="answerQuiz(1, 'C')">C) Good fluency, but I need Band 7+ IELTS score or professional executive polish.</button>
+                      <button type="button" class="quiz-option-btn p-3 text-white" onclick="answerQuiz(1, 'A')">A) Very hesitant, I freeze or translate literally from Arabic in my head.</button>
+                      <button type="button" class="quiz-option-btn p-3 text-white" onclick="answerQuiz(1, 'B')">B) I can speak basic sentences, but struggle with vocabulary & complex grammar.</button>
+                      <button type="button" class="quiz-option-btn p-3 text-white" onclick="answerQuiz(1, 'C')">C) Good fluency, but I need Band 7+ IELTS score or professional executive polish.</button>
                     </div>
                   </div>
 
@@ -1668,42 +1668,50 @@
         }
       }
 
-      // Interactive Level Quiz Script
+      // Interactive Level Quiz Script (Bilingual EN / AR)
       const quizQuestions = [
         {
-          title: "Question 1 of 4",
-          text: "How do you feel when you speak English with native speakers or in job interviews?",
+          title_en: "Question 1 of 4",
+          title_ar: "السؤال 1 من 4",
+          text_en: "How do you feel when you speak English with native speakers or in job interviews?",
+          text_ar: "كيف تشعر عندما تتحدث الإنجليزية مع أشخاص أصليين أو في مقابلات العمل؟",
           options: [
-            { text: "A) Very hesitant, I freeze or translate literally from Arabic in my head.", val: "A" },
-            { text: "B) I can speak basic sentences, but struggle with vocabulary & complex grammar.", val: "B" },
-            { text: "C) Good fluency, but I need Band 7+ IELTS score or professional executive polish.", val: "C" }
+            { text_en: "A) Very hesitant, I freeze or translate literally from Arabic in my head.", text_ar: "أ) متردد جداً، أتجمد أو أترجم حرفياً من العربي في رأسي.", val: "A" },
+            { text_en: "B) I can speak basic sentences, but struggle with vocabulary & complex grammar.", text_ar: "ب) أقدر أحكي جمل بسيطة، لكن أواجه صعوبة بالمفردات والقواعد المعقدة.", val: "B" },
+            { text_en: "C) Good fluency, but I need Band 7+ IELTS score or professional executive polish.", text_ar: "ج) طلاقة جيدة، لكن أحتاج سكور باند 7+ بالـ IELTS أو صقل مهني تنفيذي.", val: "C" }
           ]
         },
         {
-          title: "Question 2 of 4",
-          text: "What is your main English objective right now?",
+          title_en: "Question 2 of 4",
+          title_ar: "السؤال 2 من 4",
+          text_en: "What is your main English objective right now?",
+          text_ar: "ما هو هدفك الأساسي من الإنجليزية الآن؟",
           options: [
-            { text: "A) Speak English with natural fluency without fear or hesitation.", val: "A" },
-            { text: "B) Achieve Band 7.5+ in the official IELTS exam.", val: "B" },
-            { text: "C) Pass a corporate job interview or Embassy visa interview.", val: "C" }
+            { text_en: "A) Speak English with natural fluency without fear or hesitation.", text_ar: "أ) أتحدث الإنجليزية بطلاقة طبيعية بدون خوف أو تردد.", val: "A" },
+            { text_en: "B) Achieve Band 7.5+ in the official IELTS exam.", text_ar: "ب) تحقيق باند 7.5+ في امتحان الـ IELTS الرسمي.", val: "B" },
+            { text_en: "C) Pass a corporate job interview or Embassy visa interview.", text_ar: "ج) اجتياز مقابلة عمل أو مقابلة سفارة للفيزا.", val: "C" }
           ]
         },
         {
-          title: "Question 3 of 4",
-          text: "How much time can you dedicate per week to practice?",
+          title_en: "Question 3 of 4",
+          title_ar: "السؤال 3 من 4",
+          text_en: "How much time can you dedicate per week to practice?",
+          text_ar: "كم وقت تقدر تخصص أسبوعياً للتمرين؟",
           options: [
-            { text: "A) 2 to 3 sessions per week (Focused progress).", val: "A" },
-            { text: "B) 3 to 4 sessions per week (Fast-track intensive track).", val: "B" },
-            { text: "C) Flexible weekend scheduling.", val: "C" }
+            { text_en: "A) 2 to 3 sessions per week (Focused progress).", text_ar: "أ) 2 إلى 3 حصص أسبوعياً (تقدم مركّز).", val: "A" },
+            { text_en: "B) 3 to 4 sessions per week (Fast-track intensive track).", text_ar: "ب) 3 إلى 4 حصص أسبوعياً (مسار مكثف سريع).", val: "B" },
+            { text_en: "C) Flexible weekend scheduling.", text_ar: "ج) جدول مرن في عطلة نهاية الأسبوع.", val: "C" }
           ]
         },
         {
-          title: "Question 4 of 4",
-          text: "Which learning mode do you prefer?",
+          title_en: "Question 4 of 4",
+          title_ar: "السؤال 4 من 4",
+          text_en: "Which learning mode do you prefer?",
+          text_ar: "أي نمط تعلم تفضل؟",
           options: [
-            { text: "A) 1-on-1 Private Coaching (Max focus & custom speed).", val: "A" },
-            { text: "B) Duo Track (2 Friends learning together).", val: "B" },
-            { text: "C) Small Interactive Group (4 Students Max).", val: "C" }
+            { text_en: "A) 1-on-1 Private Coaching (Max focus & custom speed).", text_ar: "أ) تدريب خصوصي فردي (أقصى تركيز وسرعة مخصصة).", val: "A" },
+            { text_en: "B) Duo Track (2 Friends learning together).", text_ar: "ب) مسار ثنائي (صديقان يتعلمان معاً).", val: "B" },
+            { text_en: "C) Small Interactive Group (4 Students Max).", text_ar: "ج) مجموعة تفاعلية صغيرة (4 طلاب كحد أقصى).", val: "C" }
           ]
         }
       ];
@@ -1711,38 +1719,49 @@
       let currentStep = 0;
       let userAnswers = [];
 
-      function answerQuiz(step, val) {
-        userAnswers.push(val);
-        currentStep++;
+      function renderQuizCurrentStep() {
+        const isAr = (typeof currentLang !== 'undefined' && currentLang === 'ar') || localStorage.getItem('yazan-lang') === 'ar';
         if (currentStep < quizQuestions.length) {
           const q = quizQuestions[currentStep];
-          document.getElementById('quiz-step-title').innerText = q.title;
-          document.getElementById('quiz-question-text').innerText = q.text;
+          document.getElementById('quiz-step-title').innerText = isAr ? q.title_ar : q.title_en;
+          document.getElementById('quiz-question-text').innerText = isAr ? q.text_ar : q.text_en;
           
           let optsHtml = '';
           q.options.forEach(opt => {
-            optsHtml += `<button class="btn btn-outline-light text-start p-3 tw-rounded-lg text-white" onclick="answerQuiz(${currentStep + 1}, '${opt.val}')">${opt.text}</button>`;
+            const optText = isAr ? opt.text_ar : opt.text_en;
+            optsHtml += `<button type="button" class="quiz-option-btn p-3 text-white mb-2" onclick="answerQuiz(${currentStep + 1}, '${opt.val}')">${optText}</button>`;
           });
           document.getElementById('quiz-options-container').innerHTML = optsHtml;
         } else {
-          // Display Result
           document.getElementById('quiz-container').classList.add('d-none');
           document.getElementById('quiz-result-container').classList.remove('d-none');
 
-          let track = "Adult Conversation & Fluency Mastery Track";
-          let desc = "You are ready to break hesitations, build rapid sentence structure, and speak naturally without translating in your head.";
-          
+          let track_en = "Adult Conversation & Fluency Mastery Track";
+          let track_ar = "مسار إتقان المحادثة والطلاقة للكبار";
+          let desc_en = "You are ready to break hesitations, build rapid sentence structure, and speak naturally without translating in your head.";
+          let desc_ar = "أنت جاهز لكسر حاجز التردد، بناء الجمل بسرعة، والتحدث بطبيعية بدون ترجمة في رأسك.";
+
           if (userAnswers[1] === 'B') {
-            track = "IELTS Band 7.5+ Intensive Exam Prep";
-            desc = "Specialized 1-on-1 coaching focusing on Part 1, Part 2 & Part 3 with realistic mock exams and high-band vocabulary.";
+            track_en = "IELTS Band 7.5+ Intensive Exam Prep Track";
+            track_ar = "مسار التحضير المكثف لـ IELTS باند 7.5+";
+            desc_en = "Specialized 1-on-1 coaching focusing on Part 1, Part 2 & Part 3 with realistic mock exams and high-band vocabulary.";
+            desc_ar = "تدريب فردي متخصص يركز على أقسام 1 و 2 و 3 مع امتحانات تجريبية واقعية ومفردات باند عالي.";
           } else if (userAnswers[1] === 'C') {
-            track = "Job & Embassy Visa Interview Coaching Track";
-            desc = "Targeted interview simulation to master technical, HR & Embassy visa questions with executive confidence.";
+            track_en = "Job & Embassy Visa Interview Coaching Track";
+            track_ar = "مسار تحضير مقابلات العمل والسفارة للفيزا";
+            desc_en = "Targeted interview simulation to master technical, HR & Embassy visa questions with executive confidence.";
+            desc_ar = "محاكاة مقابلات موجّهة لإتقان أسئلة الوظائف والـ HR والسفارات بثقة تنفيذية.";
           }
-          
-          document.getElementById('quiz-result-level').innerText = "Recommended: " + track;
-          document.getElementById('quiz-result-desc').innerText = desc;
+
+          document.getElementById('quiz-result-level').innerText = isAr ? ("المسار الموصى به: " + track_ar) : ("Recommended: " + track_en);
+          document.getElementById('quiz-result-desc').innerText = isAr ? desc_ar : desc_en;
         }
+      }
+
+      function answerQuiz(step, val) {
+        userAnswers.push(val);
+        currentStep++;
+        renderQuizCurrentStep();
       }
     </script>
 

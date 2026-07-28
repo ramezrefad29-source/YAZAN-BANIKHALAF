@@ -360,6 +360,11 @@ function translatePage(lang) {
     }
   } catch(e) {}
 
+  // Update Quiz dynamically if active
+  if (typeof renderQuizCurrentStep === 'function') {
+    try { renderQuizCurrentStep(); } catch(e) {}
+  }
+
   localStorage.setItem('yazan-lang', lang);
 }
 
