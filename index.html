@@ -1416,24 +1416,24 @@
                   
                   <div class="accordion-item border-0 mb-3" style="background:#f8f9fa;border-radius:12px!important;overflow:hidden;">
                     <h2 class="accordion-header">
-                      <button class="accordion-button fw-bold tw-text-xl" type="button" data-bs-toggle="collapse" data-bs-target="#faq1">
+                      <button id="faq-btn-1" class="accordion-button fw-bold tw-text-xl" type="button" onclick="toggleFaq(1)">
                         How long is each session?
                       </button>
                     </h2>
-                    <div id="faq1" class="accordion-collapse collapse show" data-bs-parent="#faqAccordion">
+                    <div id="faq1" class="accordion-collapse collapse show">
                       <div class="accordion-body tw-text-lg">
-                        Each session duration is <strong>60 minutes</strong> for Conversation & IELTS, and <strong>50 minutes</strong> for Job/Visa Interview Preparation.
+                        Each session duration is 60 minutes for Conversation & IELTS, and 50 minutes for Job/Visa Interview Preparation.
                       </div>
                     </div>
                   </div>
 
                   <div class="accordion-item border-0 mb-3" style="background:#f8f9fa;border-radius:12px!important;overflow:hidden;">
                     <h2 class="accordion-header">
-                      <button class="accordion-button collapsed fw-bold tw-text-xl" type="button" data-bs-toggle="collapse" data-bs-target="#faq2">
+                      <button id="faq-btn-2" class="accordion-button collapsed fw-bold tw-text-xl" type="button" onclick="toggleFaq(2)">
                         Are lessons conducted online or in-person?
                       </button>
                     </h2>
-                    <div id="faq2" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                    <div id="faq2" class="accordion-collapse collapse">
                       <div class="accordion-body tw-text-lg">
                         All lessons are held online via Zoom, allowing students from anywhere around the world to join easily and comfortably.
                       </div>
@@ -1442,11 +1442,11 @@
 
                   <div class="accordion-item border-0 mb-3" style="background:#f8f9fa;border-radius:12px!important;overflow:hidden;">
                     <h2 class="accordion-header">
-                      <button class="accordion-button collapsed fw-bold tw-text-xl" type="button" data-bs-toggle="collapse" data-bs-target="#faq3">
+                      <button id="faq-btn-3" class="accordion-button collapsed fw-bold tw-text-xl" type="button" onclick="toggleFaq(3)">
                         What level of English do I need to enroll?
                       </button>
                     </h2>
-                    <div id="faq3" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                    <div id="faq3" class="accordion-collapse collapse">
                       <div class="accordion-body tw-text-lg">
                         All levels are welcome! We start with an individual 30-Minute Assessment Session to evaluate your current level, understand your goals, and tailor the perfect learning plan.
                       </div>
@@ -1455,11 +1455,11 @@
 
                   <div class="accordion-item border-0 mb-3" style="background:#f8f9fa;border-radius:12px!important;overflow:hidden;">
                     <h2 class="accordion-header">
-                      <button class="accordion-button collapsed fw-bold tw-text-xl" type="button" data-bs-toggle="collapse" data-bs-target="#faq4">
+                      <button id="faq-btn-4" class="accordion-button collapsed fw-bold tw-text-xl" type="button" onclick="toggleFaq(4)">
                         Can I reschedule a session if something comes up?
                       </button>
                     </h2>
-                    <div id="faq4" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                    <div id="faq4" class="accordion-collapse collapse">
                       <div class="accordion-body tw-text-lg">
                         Yes, sessions can be rescheduled easily with at least 24 hours advance notice via WhatsApp.
                       </div>
@@ -1468,11 +1468,11 @@
 
                   <div class="accordion-item border-0 mb-3" style="background:#f8f9fa;border-radius:12px!important;overflow:hidden;">
                     <h2 class="accordion-header">
-                      <button class="accordion-button collapsed fw-bold tw-text-xl" type="button" data-bs-toggle="collapse" data-bs-target="#faq5">
+                      <button id="faq-btn-5" class="accordion-button collapsed fw-bold tw-text-xl" type="button" onclick="toggleFaq(5)">
                         How can I pay for the courses?
                       </button>
                     </h2>
-                    <div id="faq5" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                    <div id="faq5" class="accordion-collapse collapse">
                       <div class="accordion-body tw-text-lg">
                         Payment can be made via Bank Transfer, CliQ (in Jordan), or international transfer options. Full payment details are provided upon booking.
                       </div>
@@ -1799,6 +1799,31 @@
         userAnswers.push(val);
         currentStep++;
         renderQuizCurrentStep();
+      }
+
+      // FAQ Accordion Toggle Script
+      function toggleFaq(num) {
+        const target = document.getElementById('faq' + num);
+        const btn = document.getElementById('faq-btn-' + num);
+        if (!target) return;
+        
+        const isShown = target.classList.contains('show');
+        
+        // Close all accordion items
+        document.querySelectorAll('#faqAccordion .accordion-collapse').forEach(el => {
+          el.classList.remove('show');
+          el.style.display = 'none';
+        });
+        document.querySelectorAll('#faqAccordion .accordion-button').forEach(b => {
+          b.classList.add('collapsed');
+        });
+        
+        // Toggle target item
+        if (!isShown) {
+          target.classList.add('show');
+          target.style.display = 'block';
+          if (btn) btn.classList.remove('collapsed');
+        }
       }
     </script>
 

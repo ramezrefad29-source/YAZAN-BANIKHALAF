@@ -211,26 +211,18 @@ const T = {
   "Sarah Khalil": "سارة خليل",
   "Job Interview Trainee": "متدربة مقابلات عمل",
 
-  // === TRUSTED BY & FAQ ===
-  "Trusted by Students Across 30+ Countries": "موثوق من طلاب في أكثر من 30 دولة",
-  "30+ Countries": "30+ دولة",
-  "Global Learners": "متعلمون عالميون",
-  "500+ Coached": "500+ تم تدريبهم",
-  "Successful Students": "طلاب ناجحون",
-  "Band 7.5+": "باند 7.5+",
-  "IELTS Excellence": "تميز IELTS",
-  "Cambridge": "كامبريدج",
-  "TKT CLIL Certified": "شهادة TKT CLIL",
-  "Live Zoom": "زووم مباشر",
-  "Interactive Classes": "حصص تفاعلية",
-  "5.0 / 5.0": "5.0 / 5.0",
-  "Top Student Rating": "أعلى تقييم طلابي",
+  // === FAQ ===
   "Frequently Asked Questions": "الأسئلة الشائعة",
   "How long is each session?": "كم مدة كل جلسة؟",
+  "Each session duration is 60 minutes for Conversation & IELTS, and 50 minutes for Job/Visa Interview Preparation.": "مدة كل جلسة هي 60 دقيقة لدروس المحادثة واختبار IELTS، و 50 دقيقة لتحضير مقابلات العمل والتأشيرة (السفارة).",
   "Are lessons conducted online or in-person?": "هل الدروس أونلاين أم حضورية؟",
+  "All lessons are held online via Zoom, allowing students from anywhere around the world to join easily and comfortably.": "جميع الدروس تُعقد أونلاين عبر برنامج زووم (Zoom)، مما يسمح للطلاب من أي مكان في العالم بالانضمام بسهولة وراحة من منازلهم.",
   "What level of English do I need to enroll?": "ما مستوى الإنجليزية المطلوب للتسجيل؟",
+  "All levels are welcome! We start with an individual 30-Minute Assessment Session to evaluate your current level, understand your goals, and tailor the perfect learning plan.": "جميع المستويات مرحب بها! نبدأ بجلسة تقييم فردية مدتها 30 دقيقة لتقييم مستواك الحالي، فهم أهدافك، وتصميم خطة التعلم المثالية لك.",
   "Can I reschedule a session if something comes up?": "هل يمكنني تغيير موعد الجلسة إذا حصل طارئ؟",
+  "Yes, sessions can be rescheduled easily with at least 24 hours advance notice via WhatsApp.": "نعم، يمكن إعادة جدولة الجلسات بسهولة مع إشعار مسبق لا يقل عن 24 ساعة عبر الواتساب.",
   "How can I pay for the courses?": "كيف يمكنني الدفع؟",
+  "Payment can be made via Bank Transfer, CliQ (in Jordan), or international transfer options. Full payment details are provided upon booking.": "يمكن الدفع عن طريق التحويل البنكي، أو تطبيق كليك (CliQ داخل الأردن)، أو خيارات التحويل الدولي. يتم توفير تفاصيل الدفع الكاملة عند الحجز.",
 
   // === HANGING PHOTO & FOOTER ===
   "Eng. Yazan Bani Khalaf": "م. يزن بني خلف",

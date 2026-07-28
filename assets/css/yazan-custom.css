@@ -96,38 +96,64 @@
 }
 
 /* ---- FAQ Section ---- */
+.faq-section .accordion-item {
+  border-radius: 12px !important;
+  overflow: hidden !important;
+  margin-bottom: 14px !important;
+  background: #f8f9fa !important;
+  border: 1px solid rgba(0, 0, 0, 0.06) !important;
+  transition: all 0.2s ease !important;
+}
+
 .faq-section .accordion-button {
-  background: transparent;
-  border: none;
-  box-shadow: none;
-  color: #111;
-  padding: 20px 24px;
-  font-size: 1.1rem;
+  background: #f8f9fa !important;
+  color: #111111 !important;
+  font-weight: 700 !important;
+  padding: 18px 24px !important;
+  cursor: pointer !important;
+  width: 100% !important;
+  border: none !important;
+  box-shadow: none !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: space-between !important;
+  outline: none !important;
 }
 
-.faq-section .accordion-button:not(.collapsed) {
-  color: #111;
-  background: transparent;
-  box-shadow: none;
+.faq-section .accordion-button:focus,
+.faq-section .accordion-button:active {
+  background: #f8f9fa !important;
+  color: #111111 !important;
+  box-shadow: none !important;
 }
 
-.faq-section .accordion-button::after {
-  filter: brightness(0);
+.faq-section .accordion-collapse {
+  display: none;
+  background: #ffffff !important;
+}
+
+.faq-section .accordion-collapse.show {
+  display: block !important;
 }
 
 .faq-section .accordion-body {
-  padding: 0 24px 20px;
-  color: #555;
-  line-height: 1.8;
+  padding: 20px 24px !important;
+  color: #333333 !important;
+  font-size: 1.05rem !important;
+  line-height: 1.8 !important;
+  background: #ffffff !important;
+  border-top: 1px solid #eee !important;
 }
 
-.faq-section .accordion-item {
-  transition: all 0.25s ease;
+[dir="rtl"] .faq-section .accordion-button,
+.rtl-mode .faq-section .accordion-button {
+  text-align: right !important;
 }
 
-.faq-section .accordion-item:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.08);
+[dir="rtl"] .faq-section .accordion-body,
+.rtl-mode .faq-section .accordion-body {
+  text-align: right !important;
+  direction: rtl !important;
 }
 
 /* ---- Hanging Photo Section ---- */
