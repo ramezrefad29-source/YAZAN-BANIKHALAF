@@ -342,6 +342,64 @@ function translatePage(lang) {
       : '<i class="ph-bold ph-translate"></i> عربي';
   });
 
+  // 5. Direct FAQ Translation (bypasses generic walker for reliability)
+  const faqData = [
+    {
+      btnId: 'faq-btn-1',
+      answerId: 'faq1',
+      q_en: 'How long is each session?',
+      q_ar: 'كم مدة كل جلسة؟',
+      a_en: 'Each session duration is <strong>60 minutes</strong> for Conversation & IELTS, and <strong>50 minutes</strong> for Job/Visa Interview Preparation.',
+      a_ar: 'مدة كل جلسة هي <strong>60 دقيقة</strong> لدروس المحادثة واختبار IELTS، و <strong>50 دقيقة</strong> لتحضير مقابلات العمل والتأشيرة (السفارة).'
+    },
+    {
+      btnId: 'faq-btn-2',
+      answerId: 'faq2',
+      q_en: 'Are lessons conducted online or in-person?',
+      q_ar: 'هل الدروس أونلاين أم حضورية؟',
+      a_en: 'All lessons are held online via Zoom, allowing students from anywhere around the world to join easily and comfortably.',
+      a_ar: 'جميع الدروس تُعقد أونلاين عبر برنامج زووم (Zoom)، مما يسمح للطلاب من أي مكان في العالم بالانضمام بسهولة وراحة من منازلهم.'
+    },
+    {
+      btnId: 'faq-btn-3',
+      answerId: 'faq3',
+      q_en: 'What level of English do I need to enroll?',
+      q_ar: 'ما مستوى الإنجليزية المطلوب للتسجيل؟',
+      a_en: 'All levels are welcome! We start with an individual 30-Minute Assessment Session to evaluate your current level, understand your goals, and tailor the perfect learning plan.',
+      a_ar: 'جميع المستويات مرحب بها! نبدأ بجلسة تقييم فردية مدتها 30 دقيقة لتقييم مستواك الحالي، فهم أهدافك، وتصميم خطة التعلم المثالية لك.'
+    },
+    {
+      btnId: 'faq-btn-4',
+      answerId: 'faq4',
+      q_en: 'Can I reschedule a session if something comes up?',
+      q_ar: 'هل يمكنني تغيير موعد الجلسة إذا حصل طارئ؟',
+      a_en: 'Yes, sessions can be rescheduled easily with at least 24 hours advance notice via WhatsApp.',
+      a_ar: 'نعم، يمكن إعادة جدولة الجلسات بسهولة مع إشعار مسبق لا يقل عن 24 ساعة عبر الواتساب.'
+    },
+    {
+      btnId: 'faq-btn-5',
+      answerId: 'faq5',
+      q_en: 'How can I pay for the courses?',
+      q_ar: 'كيف يمكنني الدفع؟',
+      a_en: 'Payment can be made via Bank Transfer, CliQ (in Jordan), or international transfer options. Full payment details are provided upon booking.',
+      a_ar: 'يمكن الدفع عن طريق التحويل البنكي، أو تطبيق كليك (CliQ داخل الأردن)، أو خيارات التحويل الدولي. يتم توفير تفاصيل الدفع الكاملة عند الحجز.'
+    }
+  ];
+
+  faqData.forEach(faq => {
+    const btn = document.getElementById(faq.btnId);
+    const answerDiv = document.getElementById(faq.answerId);
+    if (btn) {
+      btn.textContent = lang === 'ar' ? faq.q_ar : faq.q_en;
+    }
+    if (answerDiv) {
+      const body = answerDiv.querySelector('.faq-answer-body');
+      if (body) {
+        body.innerHTML = lang === 'ar' ? faq.a_ar : faq.a_en;
+      }
+    }
+  });
+
   updateBookingLinks(lang);
 
   // Sync Quiz if active

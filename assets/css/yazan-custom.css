@@ -96,7 +96,7 @@
 }
 
 /* ---- FAQ Section ---- */
-.faq-section .accordion-item {
+.faq-item {
   border-radius: 12px !important;
   overflow: hidden !important;
   margin-bottom: 14px !important;
@@ -105,11 +105,12 @@
   transition: all 0.2s ease !important;
 }
 
-.faq-section .accordion-button {
+.faq-question {
   background: #f8f9fa !important;
   color: #111111 !important;
   font-weight: 700 !important;
-  padding: 18px 24px !important;
+  font-size: 1.15rem !important;
+  padding: 20px 24px !important;
   cursor: pointer !important;
   width: 100% !important;
   border: none !important;
@@ -118,25 +119,38 @@
   align-items: center !important;
   justify-content: space-between !important;
   outline: none !important;
+  text-align: left !important;
+  position: relative !important;
 }
 
-.faq-section .accordion-button:focus,
-.faq-section .accordion-button:active {
+.faq-question::after {
+  content: '+';
+  font-size: 1.5rem;
+  font-weight: 300;
+  color: #888;
+  transition: transform 0.2s ease;
+  flex-shrink: 0;
+  margin-left: 12px;
+}
+
+.faq-question.active::after {
+  content: '−';
+  color: #333;
+}
+
+.faq-question:focus,
+.faq-question:active {
   background: #f8f9fa !important;
   color: #111111 !important;
   box-shadow: none !important;
+  outline: none !important;
 }
 
-.faq-section .accordion-collapse {
-  display: none;
+.faq-answer {
   background: #ffffff !important;
 }
 
-.faq-section .accordion-collapse.show {
-  display: block !important;
-}
-
-.faq-section .accordion-body {
+.faq-answer-body {
   padding: 20px 24px !important;
   color: #333333 !important;
   font-size: 1.05rem !important;
@@ -145,13 +159,20 @@
   border-top: 1px solid #eee !important;
 }
 
-[dir="rtl"] .faq-section .accordion-button,
-.rtl-mode .faq-section .accordion-button {
+[dir="rtl"] .faq-question,
+.rtl-mode .faq-question {
   text-align: right !important;
+  flex-direction: row-reverse !important;
 }
 
-[dir="rtl"] .faq-section .accordion-body,
-.rtl-mode .faq-section .accordion-body {
+[dir="rtl"] .faq-question::after,
+.rtl-mode .faq-question::after {
+  margin-left: 0 !important;
+  margin-right: 12px !important;
+}
+
+[dir="rtl"] .faq-answer-body,
+.rtl-mode .faq-answer-body {
   text-align: right !important;
   direction: rtl !important;
 }
