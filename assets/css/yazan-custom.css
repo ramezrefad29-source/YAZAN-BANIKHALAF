@@ -137,9 +137,11 @@
 }
 
 /* ---- Global Responsive Fixes ---- */
+
+/* ---- Mobile Responsiveness Perfection ---- */
 @media (max-width: 768px) {
   #globe-container {
-    height: 400px !important;
+    height: 380px !important;
   }
   
   .hanging-frame img {
@@ -148,11 +150,43 @@
   }
   
   .course-detail-card {
-    padding: 20px !important;
+    padding: 20px 16px !important;
   }
   
   .pricing-card {
-    margin-bottom: 8px;
+    margin-bottom: 12px;
+  }
+  
+  .quiz-card {
+    padding: 20px 16px !important;
+  }
+  
+  .quiz-option-btn {
+    padding: 14px 16px !important;
+    font-size: 0.95rem !important;
+  }
+
+  .roadmap-step-card {
+    padding: 20px 16px !important;
+  }
+
+  .trusted-icon-card {
+    padding: 16px 12px !important;
+  }
+
+  .trusted-icon-card i {
+    font-size: 2.2rem !important;
+  }
+
+  #lang-toggle-btn {
+    padding: 6px 12px !original;
+    font-size: 0.85rem !important;
+  }
+
+  .service-three-thumb img {
+    width: 100% !important;
+    height: auto !important;
+    max-height: 220px !important;
   }
 }
 
@@ -164,6 +198,19 @@
   .hanging-frame img {
     width: 160px !important;
     height: 210px !important;
+  }
+
+  .banner-three-title {
+    font-size: 1.8rem !important;
+    line-height: 1.3 !important;
+  }
+
+  .whatsapp-float {
+    width: 50px !important;
+    height: 50px !important;
+    font-size: 24px !important;
+    bottom: 20px !important;
+    left: 20px !important;
   }
 }
 
@@ -219,3 +266,4 @@
     box-shadow: 0 6px 30px rgba(37, 211, 102, 0.7);
   }
 }
+
