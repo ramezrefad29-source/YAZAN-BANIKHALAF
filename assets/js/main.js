@@ -112,23 +112,21 @@
 
   ////////////////////////////////////////////////////
   // 04. offcanvas Menu JS
-  $(".tw-offcanvas-open-btn").on("click", function () {
+  $(".tw-offcanvas-open-btn").on("click", function (e) {
+    e.preventDefault();
     $(".tw-offcanvas-2-area").addClass("opened");
-
+    $(".side-overlay, .overlay").addClass("opened");
     setTimeout(() => {
       $(".tw-text-hover-effect-word").addClass("animated-text");
-    }, 900);
+    }, 300);
   });
 
   ////////////////////////////////////////////////////
   // 05. offcanvas two Menu JS
-  $(".tw-offcanvas-2-close-btn").on("click", function () {
-    setTimeout(() => {
-      $(".tw-text-hover-effect-word").removeClass("animated-text");
-    }, 1200);
-
+  $(".tw-offcanvas-2-close-btn, .mobile-nav-list a, .side-overlay, .overlay").on("click", function () {
+    $(".tw-text-hover-effect-word").removeClass("animated-text");
     $(".tw-offcanvas-2-area").removeClass("opened");
-    $(".body-overlay").removeClass("opened");
+    $(".side-overlay, .overlay").removeClass("opened");
   });
 
   ////////////////////////////////////////////////////
