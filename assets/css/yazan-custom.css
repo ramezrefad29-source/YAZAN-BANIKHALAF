@@ -1,0 +1,221 @@
+/* ============================================
+   English with Yazan - Custom Styles
+   ============================================ */
+
+/* ---- Globe Section ---- */
+.globe-section {
+  overflow: hidden;
+}
+
+#globe-container {
+  position: relative;
+  background: radial-gradient(ellipse at center, #0a0a1a 0%, #000000 80%);
+}
+
+#globe-container canvas {
+  border-radius: 20px;
+}
+
+/* ---- Course Detail Cards ---- */
+.course-detail-card {
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  cursor: default;
+}
+
+.course-detail-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 20px 60px rgba(200, 164, 90, 0.1);
+  border-color: rgba(200, 164, 90, 0.3) !important;
+}
+
+.course-detail-card .cursor-pointer {
+  cursor: pointer;
+}
+
+.course-detail-card .ph-caret-down,
+.course-detail-card .ph-caret-up {
+  transition: transform 0.3s ease;
+}
+
+.course-detail-card.expanded .ph-caret-down {
+  transform: rotate(180deg);
+}
+
+.course-detail-content {
+  transition: max-height 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.pricing-card {
+  transition: all 0.3s ease;
+}
+
+.pricing-card:hover {
+  transform: translateY(-6px);
+  background: rgba(255, 255, 255, 0.1) !important;
+  box-shadow: 0 12px 40px rgba(200, 164, 90, 0.15);
+  border-color: rgba(200, 164, 90, 0.4) !important;
+}
+
+/* ---- FAQ Section ---- */
+.faq-section .accordion-button {
+  background: transparent;
+  border: none;
+  box-shadow: none;
+  color: #111;
+  padding: 20px 24px;
+  font-size: 1.1rem;
+}
+
+.faq-section .accordion-button:not(.collapsed) {
+  color: #111;
+  background: transparent;
+  box-shadow: none;
+}
+
+.faq-section .accordion-button::after {
+  filter: brightness(0);
+}
+
+.faq-section .accordion-body {
+  padding: 0 24px 20px;
+  color: #555;
+  line-height: 1.8;
+}
+
+.faq-section .accordion-item {
+  transition: all 0.3s ease;
+}
+
+.faq-section .accordion-item:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.08);
+}
+
+/* ---- Hanging Photo Section ---- */
+@keyframes swing {
+  0%, 100% {
+    transform: rotate(-3deg);
+  }
+  50% {
+    transform: rotate(3deg);
+  }
+}
+
+.hanging-photo-section {
+  overflow: hidden;
+  position: relative;
+}
+
+.hanging-photo-wrapper {
+  animation: swing 4s ease-in-out infinite;
+  transform-origin: top center;
+}
+
+.hanging-frame {
+  position: relative;
+  transition: transform 0.3s ease;
+}
+
+.hanging-frame:hover {
+  transform: rotate(0deg) scale(1.02) !important;
+}
+
+.hanging-wire {
+  position: relative;
+}
+
+.hanging-wire::before {
+  content: '';
+  position: absolute;
+  top: -10px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 12px;
+  height: 12px;
+  background: #c8a45a;
+  border-radius: 50%;
+}
+
+/* ---- Global Responsive Fixes ---- */
+@media (max-width: 768px) {
+  #globe-container {
+    height: 400px !important;
+  }
+  
+  .hanging-frame img {
+    width: 200px !important;
+    height: 260px !important;
+  }
+  
+  .course-detail-card {
+    padding: 20px !important;
+  }
+  
+  .pricing-card {
+    margin-bottom: 8px;
+  }
+}
+
+@media (max-width: 480px) {
+  #globe-container {
+    height: 300px !important;
+  }
+  
+  .hanging-frame img {
+    width: 160px !important;
+    height: 210px !important;
+  }
+}
+
+/* ---- Course Tags ---- */
+.service-three-area .portfolio-list.portfolio-two-list a {
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  padding: 6px 16px;
+  border-radius: 50px;
+  display: inline-block;
+  transition: all 0.3s ease;
+}
+
+/* ---- Enhanced Counters ---- */
+.banner-three-counter-item {
+  transition: all 0.3s ease;
+}
+
+.banner-three-counter-item:hover {
+  transform: translateY(-4px);
+}
+
+/* ---- WhatsApp Float Button ---- */
+.whatsapp-float {
+  position: fixed;
+  bottom: 30px;
+  left: 30px;
+  width: 60px;
+  height: 60px;
+  background: #25D366;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-size: 28px;
+  box-shadow: 0 6px 20px rgba(37, 211, 102, 0.4);
+  z-index: 9999;
+  transition: all 0.3s ease;
+  animation: pulse-wa 2s infinite;
+}
+
+.whatsapp-float:hover {
+  transform: scale(1.1);
+  box-shadow: 0 8px 30px rgba(37, 211, 102, 0.6);
+  color: white;
+}
+
+@keyframes pulse-wa {
+  0%, 100% {
+    box-shadow: 0 6px 20px rgba(37, 211, 102, 0.4);
+  }
+  50% {
+    box-shadow: 0 6px 30px rgba(37, 211, 102, 0.7);
+  }
+}
