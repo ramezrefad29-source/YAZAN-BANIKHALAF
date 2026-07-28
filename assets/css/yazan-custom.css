@@ -443,3 +443,31 @@
 html {
   scroll-behavior: smooth;
 }
+
+/* Fix Phosphor Icon fonts in RTL mode so icons never break into [ ] boxes */
+.rtl-mode i, 
+.rtl-mode [class*="ph-"], 
+.rtl-mode [class^="ph-"], 
+.rtl-mode .ph, 
+.rtl-mode .ph-bold,
+[dir="rtl"] i, 
+[dir="rtl"] [class*="ph-"], 
+[dir="rtl"] [class^="ph-"], 
+[dir="rtl"] .ph, 
+[dir="rtl"] .ph-bold {
+  font-family: 'Phosphor' !important;
+  font-style: normal !important;
+}
+
+/* Marquee Responsive Styling */
+.marquee-two-title, .marquee-three-title {
+  font-size: clamp(2.5rem, 6vw, 7rem) !important;
+  line-height: 1.1 !important;
+  white-space: nowrap !important;
+}
+
+.marquee-three-title.text-stroke {
+  -webkit-text-stroke-width: 1px !important;
+  -webkit-text-stroke-color: rgba(255, 255, 255, 0.7) !important;
+  color: transparent !important;
+}

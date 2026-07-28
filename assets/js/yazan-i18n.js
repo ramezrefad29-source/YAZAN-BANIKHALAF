@@ -400,6 +400,14 @@ function translatePage(lang) {
     }
   });
 
+  // 6. Direct Marquee Text Translation
+  document.querySelectorAll('.marquee-title-text').forEach(el => {
+    el.textContent = lang === 'ar' ? 'الكورسات' : 'COURSES';
+  });
+  document.querySelectorAll('.marquee-sub-text').forEach(el => {
+    el.textContent = lang === 'ar' ? 'محادثة • طلاقة • ثقة' : 'Conversation • Fluency • Confidence';
+  });
+
   updateBookingLinks(lang);
 
   // Sync Quiz if active
@@ -442,7 +450,10 @@ function injectRTLStyles() {
   if (document.getElementById('rtl-styles')) return;
   const s = document.createElement('style');
   s.id = 'rtl-styles';
-  s.textContent = `.rtl-mode, .rtl-mode * { font-family: 'Tajawal', 'Inter', sans-serif !important; }`;
+  s.textContent = `
+    .rtl-mode, .rtl-mode *:not(i):not([class*="ph-"]):not([class^="ph-"]) { font-family: 'Tajawal', 'Inter', sans-serif !important; }
+    .rtl-mode i, .rtl-mode [class*="ph-"], .rtl-mode [class^="ph-"] { font-family: 'Phosphor' !important; }
+  `;
   document.head.appendChild(s);
   const f = document.createElement('link');
   f.href = 'https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700;800&display=swap';
