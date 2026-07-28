@@ -276,9 +276,10 @@ function translatePage(lang) {
   // 1. Element-level Translation (Handles elements with text or mixed formatting)
   const selectors = 'h1, h2, h3, h4, h5, h6, p, span, a, button, li, label, strong, small, td, th';
   document.querySelectorAll(selectors).forEach(el => {
-    // Skip scripts, styles, SVGs, and lang buttons
+    // Skip scripts, styles, SVGs, lang buttons, and elements containing SVG/img children
     if (el.closest('script') || el.closest('style') || el.closest('svg')) return;
     if (el.id === 'lang-float-btn' || el.id === 'lang-toggle-btn' || el.id === 'lang-toggle-btn-mobile') return;
+    if (el.querySelector('svg, img, canvas, iframe')) return;
 
     // Save original English text on first pass
     if (!el._origEnText) {
