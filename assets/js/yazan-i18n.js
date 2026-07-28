@@ -1,16 +1,25 @@
 /**
- * English with Yazan — Complete Bilingual Translation System (EN ↔ AR)
- * Uses TreeWalker to translate ALL text nodes on the page
+ * English with Yazan — Fail-Proof Bilingual Translation Engine (EN ↔ AR)
+ * Normalizes all whitespace (tabs, newlines) to guarantee 100% dictionary matching
  */
 
 const T = {
-  // === HEADER ===
+  // === HEADER & BRAND ===
   "English with Yazan": "الإنجليزية مع يزن",
   "Book a Session": "احجز جلسة",
+  "Home": "الرئيسية",
+  "About": "عن يزن",
+  "About Me": "عن يزن",
+  "Courses": "الدورات",
+  "Level Quiz": "اختبار المستوى",
+  "Achievements": "الإنجازات",
+  "Testimonials": "آراء الطلاب",
+  "Contact": "التواصل",
+  "Contact Me": "تواصل معي",
 
   // === HERO ===
   "INSTRUCTOR": "المدرّب",
-  "Hello! I'm Yazan": "!مرحباً، أنا يزن",
+  "Hello! I'm Yazan": "مرحباً! أنا يزن",
   "a certified international English instructor & conversation coach.": "مدرب إنجليزي دولي معتمد ومدرب محادثة.",
   "IELTS Preparation (Band 7+)": "تحضير IELTS (باند 7+)",
   "Conversation Mastery": "إتقان المحادثة",
@@ -49,7 +58,7 @@ const T = {
   "A) 1-on-1 Private Coaching (Max focus & custom speed).": "أ) تدريب خصوصي فردي (أقصى تركيز وسرعة مخصصة).",
   "B) Duo Track (2 Friends learning together).": "ب) مسار ثنائي (صديقان يتعلمان معاً).",
   "C) Small Interactive Group (4 Students Max).": "ج) مجموعة تفاعلية صغيرة (4 طلاب كحد أقصى).",
-  "Assessment Complete!": "!اكتمل التقييم",
+  "Assessment Complete!": "اكتمل التقييم!",
   "Book Free 30-Min Level Session": "احجز جلسة تقييم مجانية 30 دقيقة",
 
   // === ROADMAP ===
@@ -67,18 +76,12 @@ const T = {
   "Fluency & Score Achievement": "تحقيق الطلاقة والدرجة",
   "Achieve Band 7.5+, land your dream job offer, or travel with absolute English confidence.": "حقق باند 7.5+، احصل على عرض العمل المثالي، أو سافر بثقة تامة بالإنجليزية.",
 
-  // === ABOUT ===
+  // === ABOUT SECTION ===
   "I am dedicated to helping you master the English language through practical, confidence-building methods. My teaching goes beyond textbooks — I focus on real-world fluency that transforms how you communicate.": "أنا ملتزم بمساعدتك على إتقان اللغة الإنجليزية من خلال أساليب عملية تبني الثقة. تدريسي يتجاوز الكتب — أركز على الطلاقة الواقعية التي تغيّر طريقة تواصلك.",
-  "My Journey with English...": "...رحلتي مع الإنجليزية",
-  "From being unable to express myself in English to scoring": "من عدم القدرة على التعبير عن نفسي بالإنجليزية إلى تحقيق",
-  "7.5 on the IELTS": "7.5 في الـ IELTS",
-  ", earning a": "، والحصول على شهادة",
-  "TKT CLIL Band 4": "TKT CLIL باند 4",
-  "certification, and becoming an internationally certified English coach.": "والتحول إلى مدرب إنجليزي دولي معتمد.",
+  "My Journey with English...": "رحلتي مع الإنجليزية...",
+  "From being unable to express myself in English to scoring 7.5 on the IELTS, earning a TKT CLIL Band 4 certification, and becoming an internationally certified English coach.": "من عدم القدرة على التعبير عن نفسي بالإنجليزية إلى تحقيق 7.5 في الـ IELTS، والحصول على شهادة TKT CLIL باند 4، والتحول إلى مدرب إنجليزي دولي معتمد.",
   "Years ago, despite my engineering degree, I struggled to speak English. Confidence was zero, and job rejections kept coming. That's when I made a firm decision to master the language no matter what. Through daily commitment, continuous practice, and learning from mistakes, I achieved fluency.": "قبل سنوات، رغم شهادتي الهندسية، كنت أعاني من التحدث بالإنجليزية. الثقة كانت صفر، والرفض من الوظائف مستمر. حينها قررت بشكل حازم إتقان اللغة مهما كلف الأمر. من خلال الالتزام اليومي والممارسة المستمرة والتعلم من الأخطاء، حققت الطلاقة.",
-  "Over time, my students began calling me": "مع الوقت، بدأ طلابي يسمونني",
-  "\"Conversation Messi\"": "\"ميسي المحادثة\"",
-  "because of my unique ability to help anyone talk about any topic in English — even if it's their first time encountering it. The secret isn't just memorizing thousands of words; it's learning how to build sentences, organize thoughts, and use techniques that make you express yourself smoothly in any situation.": "بسبب قدرتي الفريدة على مساعدة أي شخص للتحدث عن أي موضوع بالإنجليزية — حتى لو كانت أول مرة يصادفه. السر ليس مجرد حفظ آلاف الكلمات؛ بل تعلم كيفية بناء الجمل وتنظيم الأفكار واستخدام تقنيات تجعلك تعبر عن نفسك بسلاسة في أي موقف.",
+  "Over time, my students began calling me \"Conversation Messi\" because of my unique ability to help anyone talk about any topic in English — even if it's their first time encountering it. The secret isn't just memorizing thousands of words; it's learning how to build sentences, organize thoughts, and use techniques that make you express yourself smoothly in any situation.": "مع الوقت، بدأ طلابي يسمونني \"ميسي المحادثة\" بسبب قدرتي الفريدة على مساعدة أي شخص للتحدث عن أي موضوع بالإنجليزية — حتى لو كانت أول مرة يصادفه. السر ليس مجرد حفظ آلاف الكلمات؛ بل تعلم كيفية بناء الجمل وتنظيم الأفكار واستخدام تقنيات تجعلك تعبر عن نفسك بسلاسة في أي موقف.",
   "Years Experience": "سنوات خبرة",
   "IELTS Band Score": "درجة IELTS باند",
 
@@ -86,17 +89,11 @@ const T = {
   "✦ Global Reach & Online Tutoring": "✦ انتشار عالمي وتدريس أونلاين",
   "Students From Around": "طلاب من جميع أنحاء",
   "The Entire World": "العالم بأكمله",
-  "Whether you are located in": "سواء كنت في",
-  "Jordan, Saudi Arabia, UAE, Qatar, the UK, Germany, Canada, or Japan": "الأردن، السعودية، الإمارات، قطر، بريطانيا، ألمانيا، كندا، أو اليابان",
-  "— my interactive online courses bring world-class English coaching directly to your screen via Zoom.": "— دوراتي التفاعلية عبر الإنترنت توصل تدريب إنجليزي عالمي مباشرة إلى شاشتك عبر زووم.",
-  "Join an international community of": "انضم لمجتمع دولي من",
-  "500+ successful learners": "500+ متعلم ناجح",
-  "across": "في",
-  "30+ countries": "30+ دولة",
-  "who conquered their fear of speaking, mastered real-life conversation, and achieved Band 7+ on the IELTS exam.": "تغلبوا على خوفهم من التحدث، أتقنوا المحادثة الواقعية، وحققوا باند 7+ في امتحان الـ IELTS.",
+  "Whether you are located in Jordan, Saudi Arabia, UAE, Qatar, the UK, Germany, Canada, or Japan — my interactive online courses bring world-class English coaching directly to your screen via Zoom.": "سواء كنت في الأردن، السعودية، الإمارات، قطر، بريطانيا، ألمانيا، كندا، أو اليابان — دوراتي التفاعلية عبر الإنترنت توصل تدريب إنجليزي عالمي مباشرة إلى شاشتك عبر زووم.",
+  "Join an international community of 500+ successful learners across 30+ countries who conquered their fear of speaking, mastered real-life conversation, and achieved Band 7+ on the IELTS exam.": "انضم لمجتمع دولي من 500+ متعلم ناجح في 30+ دولة تغلبوا على خوفهم من التحدث، أتقنوا المحادثة الواقعية، وحققوا باند 7+ في امتحان الـ IELTS.",
   "Join Our Global Class": "انضم لصفنا العالمي",
 
-  // === COURSES ===
+  // === COURSES & TAGS ===
   "COURSES": "الدورات",
   "Adult Conversation Course": "دورة المحادثة للكبار",
   "IELTS Speaking 7+ Course": "دورة IELTS محادثة 7+",
@@ -113,7 +110,7 @@ const T = {
   // === COURSE DETAILS ===
   "✦ Adult Conversation Course — Details & Pricing": "✦ دورة المحادثة للكبار — التفاصيل والأسعار",
   "Professional conversation training designed to break fear, build confidence, and achieve natural speaking fluency.": "تدريب محادثة احترافي مصمم لكسر الخوف وبناء الثقة وتحقيق طلاقة طبيعية بالتحدث.",
-  "What You'll Learn & Experience:": ":ما ستتعلمه وتختبره",
+  "What You'll Learn & Experience:": "ما ستتعلمه وتختبره:",
   "✦ Interactive, comfortable atmosphere encouraging free speaking without fear of mistakes": "✦ أجواء تفاعلية ومريحة تشجع على التحدث بحرية بدون خوف من الأخطاء",
   "✦ Practical role-playing exercises, discussions simulating daily life, work, and travel": "✦ تمارين لعب أدوار عملية، ومناقشات تحاكي الحياة اليومية والعمل والسفر",
   "✦ Instant error correction with clear explanations of structure and grammar": "✦ تصحيح فوري للأخطاء مع شرح واضح للبنية والقواعد",
@@ -122,7 +119,7 @@ const T = {
   "✦ Master essential daily idioms and expressions used by native speakers": "✦ إتقان التعبيرات اليومية الأساسية التي يستخدمها المتحدثون الأصليون",
   "✦ Continuous progress tracking with practical homework assignments after each session": "✦ متابعة تقدم مستمرة مع واجبات عملية بعد كل جلسة",
   "✦ Small group sizes to ensure max participation for every student": "✦ مجموعات صغيرة لضمان أقصى مشاركة لكل طالب",
-  "What You Will Achieve:": ":ما ستحققه",
+  "What You Will Achieve:": "ما ستحققه:",
   "Speak English with greater confidence and noticeable fluency": "التحدث بالإنجليزية بثقة أكبر وطلاقة ملحوظة",
   "Improve pronunciation and express yourself naturally": "تحسين النطق والتعبير عن نفسك بشكل طبيعي",
   "Master everyday vocabulary for real-world situations": "إتقان المفردات اليومية للمواقف الواقعية",
@@ -130,26 +127,26 @@ const T = {
   "Increase your conversation response speed without hesitation": "زيادة سرعة استجابتك بالمحادثة بدون تردد",
   "Develop strong listening and comprehension skills": "تطوير مهارات استماع وفهم قوية",
   "Build a solid language foundation for work, study, and travel": "بناء أساس لغوي متين للعمل والدراسة والسفر",
-  "Private Lessons (1-on-1) Pricing:": ":أسعار الدروس الخصوصية (فردي)",
+  "Private Lessons (1-on-1) Pricing:": "أسعار الدروس الخصوصية (فردي):",
   "12 Sessions / 1 Month": "12 جلسة / شهر واحد",
   "24 Sessions / 2 Months": "24 جلسة / شهرين",
   "36 Sessions / 3 Months": "36 جلسة / 3 أشهر",
   "72 Sessions / 6 Months": "72 جلسة / 6 أشهر",
   "Available on Request": "متاح عند الطلب",
   "Full Fluency Track": "مسار الطلاقة الكاملة",
-  "Group of 4 Pricing:": ":أسعار مجموعة 4 طلاب",
+  "Group of 4 Pricing:": "أسعار مجموعة 4 طلاب:",
   "Book This Course": "احجز هذه الدورة",
   "Book IELTS Course": "احجز دورة IELTS",
   "Book Interview Prep": "احجز تدريب المقابلات",
 
-  // === IELTS COURSE DETAILS ===
+  // === IELTS COURSE ===
   "✦ IELTS Speaking 7+ Course — Details & Pricing": "✦ دورة IELTS محادثة 7+ — التفاصيل والأسعار",
   "Intensive, specialized training to help you score Band 7+ in the IELTS Speaking section with confidence.": "تدريب مكثف ومتخصص لمساعدتك على تحقيق باند 7+ في قسم المحادثة بثقة.",
-  "How The Course Works:": ":كيف تعمل الدورة",
+  "How The Course Works:": "كيف تعمل الدورة:",
   "✦ Number of sessions is determined after an initial Level Assessment session": "✦ عدد الجلسات يُحدد بعد جلسة تقييم المستوى الأولية",
   "✦ Comprehensive Assessment to pinpoint strengths and key improvement areas": "✦ تقييم شامل لتحديد نقاط القوة ومجالات التحسين الرئيسية",
   "✦ Includes a Full Mock Test before your exam date under realistic exam conditions": "✦ يتضمن اختبار تجريبي كامل قبل موعد الامتحان بظروف واقعية",
-  "Course Content & Features:": ":محتوى الدورة ومميزاتها",
+  "Course Content & Features:": "محتوى الدورة ومميزاتها:",
   "✦ Intensive practical training on Part 1, Part 2 & Part 3 with customized strategies": "✦ تدريب عملي مكثف على Part 1 و Part 2 و Part 3 باستراتيجيات مخصصة",
   "✦ Immediate correction of Grammar, Vocabulary, and Pronunciation errors": "✦ تصحيح فوري لأخطاء القواعد والمفردات والنطق",
   "✦ Techniques to structure complex answers fluently without hesitation": "✦ تقنيات لبناء إجابات معقدة بطلاقة بدون تردد",
@@ -157,23 +154,23 @@ const T = {
   "✦ Realistic Mock Interviews simulating the exact IELTS Speaking test format": "✦ مقابلات تجريبية واقعية تحاكي شكل اختبار IELTS بالضبط",
   "✦ Detailed performance breakdown after each session with actionable feedback": "✦ تحليل أداء تفصيلي بعد كل جلسة مع ملاحظات قابلة للتنفيذ",
   "✦ Time management techniques for speaking smoothly under exam pressure": "✦ تقنيات إدارة الوقت للتحدث بسلاسة تحت ضغط الامتحان",
-  "Pricing (60 min per session):": ":(الأسعار (60 دقيقة لكل جلسة",
+  "Pricing (60 min per session):": "الأسعار (60 دقيقة لكل جلسة):",
 
-  // === INTERVIEW COURSE DETAILS ===
+  // === INTERVIEW COURSE ===
   "✦ Job & Embassy Visa Interview Preparation — Details & Pricing": "✦ تحضير مقابلات العمل والسفارة — التفاصيل والأسعار",
   "Targeted 1-on-1 coaching for corporate job interviews and US / UK / Schengen Embassy visa interviews in English.": "تدريب فردي موجّه لمقابلات الشركات ومقابلات السفارة الأمريكية/البريطانية/شنغن باللغة الإنجليزية.",
-  "Session Objectives:": ":أهداف الجلسة",
+  "Session Objectives:": "أهداف الجلسة:",
   "✦ Boost overall interview confidence and formal communication skills": "✦ تعزيز الثقة العامة بالمقابلات ومهارات التواصل الرسمي",
   "✦ Master technical & HR responses for top multinational companies": "✦ إتقان الردود التقنية وردود الموارد البشرية لأكبر الشركات متعددة الجنسيات",
   "✦ Practice US, UK & Schengen Embassy visa interview questions": "✦ ممارسة أسئلة مقابلات السفارة الأمريكية والبريطانية وشنغن",
   "✦ Deliver clear, persuasive, well-structured answers": "✦ تقديم إجابات واضحة ومقنعة ومنظمة بشكل جيد",
   "✦ Refine pronunciation, formal tone, and executive vocabulary": "✦ صقل النطق والنبرة الرسمية والمفردات التنفيذية",
-  "What You Get:": ":ما ستحصل عليه",
+  "What You Get:": "ما ستحصل عليه:",
   "✦ Simulated mock job & visa interviews tailored to your exact target": "✦ مقابلات عمل وفيزا تجريبية مخصصة لهدفك بالضبط",
   "✦ Real-time feedback and correction of language & tone errors": "✦ ملاحظات فورية وتصحيح أخطاء اللغة والنبرة",
   "✦ Body language, confidence, and vocal delivery coaching": "✦ تدريب على لغة الجسد والثقة وإلقاء الصوت",
   "✦ Actionable advice to stand out and secure job & visa approvals": "✦ نصائح عملية للتميز وضمان الموافقة على الوظائف والتأشيرات",
-  "Pricing (50 min per session):": ":(الأسعار (50 دقيقة لكل جلسة",
+  "Pricing (50 min per session):": "الأسعار (50 دقيقة لكل جلسة):",
   "1 Session": "جلسة واحدة",
   "2 Sessions": "جلستين",
   "3 Sessions": "3 جلسات",
@@ -210,7 +207,7 @@ const T = {
   "Sarah Khalil": "سارة خليل",
   "Job Interview Trainee": "متدربة مقابلات عمل",
 
-  // === TRUSTED BY ===
+  // === TRUSTED BY & FAQ ===
   "Trusted by Students Across 30+ Countries": "موثوق من طلاب في أكثر من 30 دولة",
   "30+ Countries": "30+ دولة",
   "Global Learners": "متعلمون عالميون",
@@ -224,51 +221,50 @@ const T = {
   "Interactive Classes": "حصص تفاعلية",
   "5.0 / 5.0": "5.0 / 5.0",
   "Top Student Rating": "أعلى تقييم طلابي",
-
-  // === FAQ ===
   "Frequently Asked Questions": "الأسئلة الشائعة",
   "How long is each session?": "كم مدة كل جلسة؟",
-  "Each session duration is": "مدة كل جلسة هي",
-  "60 minutes": "60 دقيقة",
-  "for Conversation & IELTS, and": "للمحادثة و IELTS، و",
-  "50 minutes": "50 دقيقة",
-  "for Job/Visa Interview Preparation.": "لتحضير مقابلات العمل/الفيزا.",
   "Are lessons conducted online or in-person?": "هل الدروس أونلاين أم حضورية؟",
-  "All lessons are held online via Zoom, allowing students from anywhere around the world to join easily and comfortably.": "جميع الدروس تُعقد أونلاين عبر زووم، مما يسمح للطلاب من أي مكان في العالم بالانضمام بسهولة وراحة.",
   "What level of English do I need to enroll?": "ما مستوى الإنجليزية المطلوب للتسجيل؟",
-  "All levels are welcome! We start with an individual 30-Minute Assessment Session to evaluate your current level, understand your goals, and tailor the perfect learning plan.": "جميع المستويات مرحب بها! نبدأ بجلسة تقييم فردية مدتها 30 دقيقة لتقييم مستواك الحالي وفهم أهدافك وتصميم خطة التعلم المثالية.",
   "Can I reschedule a session if something comes up?": "هل يمكنني تغيير موعد الجلسة إذا حصل طارئ؟",
-  "Yes, sessions can be rescheduled easily with at least 24 hours advance notice via WhatsApp.": "نعم، يمكن إعادة جدولة الجلسات بسهولة مع إشعار مسبق لا يقل عن 24 ساعة عبر واتساب.",
   "How can I pay for the courses?": "كيف يمكنني الدفع؟",
-  "Payment can be made via Bank Transfer, CliQ (in Jordan), or international transfer options. Full payment details are provided upon booking.": "يمكن الدفع عبر التحويل البنكي، كليك (في الأردن)، أو خيارات التحويل الدولي. تفاصيل الدفع الكاملة تُقدم عند الحجز.",
 
-  // === HANGING PHOTO ===
+  // === HANGING PHOTO & FOOTER ===
   "Eng. Yazan Bani Khalaf": "م. يزن بني خلف",
   "Certified International English Instructor": "مدرب إنجليزي دولي معتمد",
   "Certified IELTS & Conversation Instructor": "مدرب IELTS ومحادثة معتمد",
-
-  // === FOOTER ===
   "Let's Start Your English Journey": "لنبدأ رحلتك مع الإنجليزية",
-  "Contact Me": "تواصل معي",
   "Amman, Jordan": "عمّان، الأردن",
-  "Quick Links": "روابط سريعة",
   "Submit Message": "إرسال الرسالة",
   "close": "إغلاق",
   "© 2025 English with Yazan. All rights reserved": "© 2025 الإنجليزية مع يزن. جميع الحقوق محفوظة",
   "results": "نتائج",
   "Yazan": "يزن",
-  "Home,": ",الرئيسية",
-  "About Me,": ",عن يزن",
-  "Courses,": ",الدورات",
-  "Level Quiz,": ",اختبار المستوى",
-  "Methodology,": ",المنهجية",
-  "Contact": "التواصل"
+  "Home / الرئيسية": "الرئيسية",
+  "About / عن يزن": "عن يزن",
+  "Courses / الدورات": "الدورات",
+  "Level Quiz / اختبار المستوى": "اختبار المستوى",
+  "Achievements / الإنجازات": "الإنجازات",
+  "Testimonials / آراء الطلاب": "آراء الطلاب",
+  "Contact / التواصل": "التواصل",
+  "Home,": "الرئيسية،",
+  "About Me,": "عن يزن،",
+  "Courses,": "الدورات،",
+  "Level Quiz,": "اختبار المستوى،",
+  "Methodology,": "المنهجية،"
 };
 
-// Build reverse map for AR -> EN
-const reverseT = {};
-for (const [en, ar] of Object.entries(T)) {
-  reverseT[ar] = en;
+// Helper: Normalize all whitespace to single spaces for fail-proof matching
+function norm(str) {
+  return (str || '').replace(/\s+/g, ' ').trim();
+}
+
+// Normalized dictionaries
+const NT = {};
+const NRevT = {};
+
+for (const [k, v] of Object.entries(T)) {
+  NT[norm(k)] = v;
+  NRevT[norm(v)] = k;
 }
 
 let currentLang = 'en';
@@ -279,21 +275,41 @@ function translatePage(lang) {
   document.documentElement.lang = lang;
   document.body.classList.toggle('rtl-mode', lang === 'ar');
 
-  // Use TreeWalker to find ALL text nodes in the document
+  const dict = lang === 'ar' ? NT : NRevT;
+
+  // 1. Element-level Translation (Handles elements with text or mixed formatting)
+  const selectors = 'h1, h2, h3, h4, h5, h6, p, span, a, button, li, label, strong, small, td, th';
+  document.querySelectorAll(selectors).forEach(el => {
+    // Skip scripts, styles, SVGs, and lang buttons
+    if (el.closest('script') || el.closest('style') || el.closest('svg')) return;
+    if (el.id === 'lang-float-btn' || el.id === 'lang-toggle-btn' || el.id === 'lang-toggle-btn-mobile') return;
+
+    // Save original English text on first pass
+    if (!el._origEnText) {
+      el._origEnText = norm(el.textContent);
+    }
+
+    const key = lang === 'ar' ? el._origEnText : norm(el.textContent);
+    if (dict[key]) {
+      // If direct match, set translated text cleanly
+      el.textContent = dict[key];
+    }
+  });
+
+  // 2. Text-Node Level Translation (TreeWalker fallback)
   const walker = document.createTreeWalker(
     document.body,
     NodeFilter.SHOW_TEXT,
     {
       acceptNode: function(node) {
-        // Skip script, style, svg nodes
         const parent = node.parentElement;
         if (!parent) return NodeFilter.FILTER_REJECT;
         const tag = parent.tagName;
         if (tag === 'SCRIPT' || tag === 'STYLE' || tag === 'NOSCRIPT') return NodeFilter.FILTER_REJECT;
         if (parent.closest('svg')) return NodeFilter.FILTER_REJECT;
         if (parent.id === 'lang-float-btn' || parent.id === 'lang-toggle-btn' || parent.id === 'lang-toggle-btn-mobile') return NodeFilter.FILTER_REJECT;
-        const trimmed = node.textContent.trim();
-        if (!trimmed || trimmed.length < 2) return NodeFilter.FILTER_REJECT;
+        const key = norm(node.textContent);
+        if (!key || key.length < 2) return NodeFilter.FILTER_REJECT;
         return NodeFilter.FILTER_ACCEPT;
       }
     }
@@ -304,33 +320,26 @@ function translatePage(lang) {
     textNodes.push(walker.currentNode);
   }
 
-  const dict = lang === 'ar' ? T : reverseT;
-
   textNodes.forEach(node => {
-    const trimmed = node.textContent.trim();
-    // Save original on first pass
     if (!node._origText) {
-      node._origText = trimmed;
+      node._origText = norm(node.textContent);
     }
 
-    const sourceText = lang === 'ar' ? node._origText : trimmed;
-    if (dict[sourceText]) {
-      // Preserve leading/trailing whitespace
-      const leading = node.textContent.match(/^\s*/)[0];
-      const trailing = node.textContent.match(/\s*$/)[0];
-      node.textContent = leading + dict[sourceText] + trailing;
+    const key = lang === 'ar' ? node._origText : norm(node.textContent);
+    if (dict[key]) {
+      node.textContent = dict[key];
     }
   });
 
-  // Also translate placeholders on inputs
+  // 3. Translate Placeholders
   document.querySelectorAll('input[placeholder], textarea[placeholder]').forEach(el => {
-    const ph = el.getAttribute('placeholder');
+    const ph = norm(el.getAttribute('placeholder'));
     if (!el._origPh) el._origPh = ph;
-    const src = lang === 'ar' ? el._origPh : ph;
-    if (dict[src]) el.setAttribute('placeholder', dict[src]);
+    const key = lang === 'ar' ? el._origPh : ph;
+    if (dict[key]) el.setAttribute('placeholder', dict[key]);
   });
 
-  // Update toggle buttons
+  // 4. Update Language Toggle Buttons
   document.querySelectorAll('#lang-float-btn, #lang-toggle-btn, #lang-toggle-btn-mobile').forEach(btn => {
     btn.innerHTML = lang === 'ar'
       ? '<i class="ph-bold ph-translate"></i> English'
@@ -339,28 +348,7 @@ function translatePage(lang) {
 
   updateBookingLinks(lang);
 
-  // Force Swiper testimonials to re-render and stay visible
-  try {
-    document.querySelectorAll('.swiper-slide').forEach(slide => {
-      slide.style.visibility = 'visible';
-      slide.style.opacity = '1';
-    });
-    document.querySelectorAll('.swiper-wrapper').forEach(wrapper => {
-      wrapper.style.visibility = 'visible';
-      wrapper.style.opacity = '1';
-    });
-    // Re-init swiper if available
-    if (window.Swiper) {
-      document.querySelectorAll('.testimonial-three-active').forEach(el => {
-        if (el.swiper) {
-          el.swiper.update();
-          el.swiper.slideTo(0);
-        }
-      });
-    }
-  } catch(e) {}
-
-  // Update Quiz dynamically if active
+  // Sync Quiz if active
   if (typeof renderQuizCurrentStep === 'function') {
     try { renderQuizCurrentStep(); } catch(e) {}
   }
@@ -396,7 +384,6 @@ function updateBookingLinks(lang) {
   });
 }
 
-// RTL styles injection — preload Tajawal font
 function injectRTLStyles() {
   if (document.getElementById('rtl-styles')) return;
   const s = document.createElement('style');
@@ -413,12 +400,12 @@ function initI18n() {
   injectRTLStyles();
   const saved = localStorage.getItem('yazan-lang');
   if (saved === 'ar') {
-    setTimeout(() => translatePage('ar'), 200);
+    setTimeout(() => translatePage('ar'), 150);
   }
 }
 
 if (document.readyState === 'loading') {
   document.addEventListener('DOMContentLoaded', initI18n);
 } else {
-  setTimeout(initI18n, 200);
+  setTimeout(initI18n, 150);
 }
