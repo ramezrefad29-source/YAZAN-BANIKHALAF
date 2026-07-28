@@ -343,6 +343,12 @@ function translatePage(lang) {
       ? '<i class="ph-bold ph-translate"></i> EN' 
       : '<i class="ph-bold ph-translate"></i> عربي';
   }
+  const toggleBtnMobile = document.getElementById('lang-toggle-btn-mobile');
+  if (toggleBtnMobile) {
+    toggleBtnMobile.innerHTML = lang === 'ar'
+      ? '<i class="ph-bold ph-translate"></i> 🌐 Switch to English'
+      : '<i class="ph-bold ph-translate"></i> 🌐 التحويل للغة العربية';
+  }
 
   // Update WhatsApp booking links
   updateBookingLinks(lang);
@@ -465,13 +471,21 @@ function injectRTLStyles() {
 function initI18n() {
   injectRTLStyles();
 
-  // Add language toggle button to header
+  // Add language toggle button to header and mobile menu
   const headerRight = document.querySelector('.header-right');
-  if (headerRight) {
+  if (headerRight && !document.getElementById('lang-toggle-btn')) {
     const toggleWrapper = document.createElement('div');
-    toggleWrapper.className = 'd-inline-block me-3';
+    toggleWrapper.className = 'd-inline-block me-2';
     toggleWrapper.innerHTML = `<button id="lang-toggle-btn" onclick="toggleLanguage()"><i class="ph-bold ph-translate"></i> عربي</button>`;
     headerRight.insertBefore(toggleWrapper, headerRight.firstChild);
+  }
+
+  const mobileNav = document.querySelector('.tw-main-menu-mobile');
+  if (mobileNav && !document.getElementById('lang-toggle-btn-mobile')) {
+    const mobileToggle = document.createElement('div');
+    mobileToggle.className = 'mb-4';
+    mobileToggle.innerHTML = `<button id="lang-toggle-btn-mobile" onclick="toggleLanguage()" style="background:linear-gradient(135deg,#c8a45a,#ffd700);color:#000;border:none;padding:10px 20px;border-radius:8px;font-weight:700;font-size:1rem;width:100%;"><i class="ph-bold ph-translate"></i> 🌐 Switch Language / تغيير اللغة</button>`;
+    mobileNav.insertBefore(mobileToggle, mobileNav.firstChild);
   }
 
   // Add data-course-id to booking buttons

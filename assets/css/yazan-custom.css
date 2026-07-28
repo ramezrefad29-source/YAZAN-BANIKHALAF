@@ -215,6 +215,12 @@
 }
 
 /* ---- Course Tags ---- */
+.portfolio-list ul li::after,
+.portfolio-list ul li::before {
+  display: none !important;
+  content: none !important;
+}
+
 .service-three-area .portfolio-list.portfolio-two-list a {
   border: 1px solid rgba(255, 255, 255, 0.2);
   padding: 6px 16px;
