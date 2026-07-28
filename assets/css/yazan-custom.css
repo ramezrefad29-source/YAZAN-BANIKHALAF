@@ -301,3 +301,187 @@
   }
 }
 
+/* ============================================
+   RTL MODE FIXES — Hero Image + Testimonials + Layout
+   ============================================ */
+
+/* Fix hero photo staying centered in RTL */
+[dir="rtl"] .banner-three-man {
+  left: 50% !important;
+  right: auto !important;
+  transform: translateX(-50%) !important;
+  inset-inline-start: auto !important;
+}
+
+[dir="rtl"] .banner-three-man,
+.rtl-mode .banner-three-man {
+  left: 50% !important;
+  right: auto !important;
+  transform: translateX(-50%) !important;
+}
+
+/* Fix start-50 translate-middle-x in RTL */
+[dir="rtl"] .start-50 {
+  left: 50% !important;
+  right: auto !important;
+}
+
+[dir="rtl"] .translate-middle-x {
+  transform: translateX(-50%) !important;
+}
+
+/* Fix hero line shape centering */
+[dir="rtl"] .banner-three-line-shape {
+  left: 50% !important;
+  right: auto !important;
+  transform: translateX(-50%) !important;
+}
+
+/* === TESTIMONIALS FIX IN RTL === */
+[dir="rtl"] .testimonial-three-active,
+[dir="rtl"] .testimonial-three-slider,
+[dir="rtl"] .swiper-container,
+[dir="rtl"] .swiper-wrapper,
+[dir="rtl"] .testimonial-three-wrapper,
+[dir="rtl"] .swiper-slide {
+  direction: ltr !important;
+  visibility: visible !important;
+  opacity: 1 !important;
+  display: flex !important;
+}
+
+[dir="rtl"] .testimonial-three-content,
+[dir="rtl"] .testimonial-three-paragraph,
+[dir="rtl"] .testimonial-three-thumb {
+  direction: rtl !important;
+  text-align: right !important;
+  visibility: visible !important;
+  opacity: 1 !important;
+}
+
+[dir="rtl"] .testimonial-three-wrapper {
+  flex-direction: row-reverse !important;
+}
+
+[dir="rtl"] .testimonial-three-area {
+  overflow: visible !important;
+}
+
+/* Fix Swiper breaking in RTL */
+[dir="rtl"] .swiper {
+  direction: ltr !important;
+}
+
+[dir="rtl"] .swiper .swiper-slide {
+  direction: rtl !important;
+}
+
+/* === Fix marquee in RTL === */
+[dir="rtl"] .marquee,
+[dir="rtl"] .marquee_left {
+  direction: ltr !important;
+}
+
+/* === Fix certifications/features hover in RTL === */
+[dir="rtl"] .feature-three-item {
+  flex-direction: row-reverse !important;
+}
+
+[dir="rtl"] .feature-three-left {
+  flex-direction: row-reverse !important;
+}
+
+/* === General RTL text alignment === */
+[dir="rtl"] .text-start {
+  text-align: right !important;
+}
+
+[dir="rtl"] .text-end,
+[dir="rtl"] .text-lg-end {
+  text-align: left !important;
+}
+
+/* Fix WhatsApp & Lang float in RTL — keep on left */
+[dir="rtl"] .whatsapp-float {
+  left: 25px !important;
+  right: auto !important;
+}
+
+[dir="rtl"] .lang-float-btn {
+  left: 25px !important;
+  right: auto !important;
+}
+
+/* ============================================
+   SPEED & SMOOTHNESS — Faster Animations
+   ============================================ */
+
+/* Speed up ALL AOS animations */
+[data-aos] {
+  transition-duration: 0.4s !important;
+}
+
+[data-aos][data-aos-duration="1000"] {
+  transition-duration: 0.4s !important;
+}
+
+[data-aos][data-aos-duration="1500"] {
+  transition-duration: 0.5s !important;
+}
+
+[data-aos][data-aos-duration="2000"] {
+  transition-duration: 0.5s !important;
+}
+
+/* Speed up all general transitions */
+* {
+  transition-duration: 0.25s !important;
+}
+
+/* Except specific things that need their own timing */
+.course-detail-content {
+  transition: max-height 0.35s cubic-bezier(0.4, 0, 0.2, 1) !important;
+}
+
+.preloader svg path {
+  transition-duration: 0.6s !important;
+}
+
+/* Faster hover effects */
+.pricing-card,
+.roadmap-step,
+.course-detail-card,
+.banner-three-counter-item,
+.faq-section .accordion-item,
+.hanging-frame,
+.trusted-icon-card {
+  transition: all 0.2s ease !important;
+}
+
+/* Faster page scroll smoothness */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Speed up page load feel */
+.preloader {
+  transition: all 0.3s ease !important;
+}
+
+/* Reduce AOS delay globally */
+[data-aos-delay="200"] {
+  transition-delay: 0.05s !important;
+}
+
+[data-aos-delay="300"] {
+  transition-delay: 0.1s !important;
+}
+
+[data-aos-delay="400"] {
+  transition-delay: 0.15s !important;
+}
+
+/* Make swiper transitions faster */
+.swiper-wrapper {
+  transition-duration: 300ms !important;
+}

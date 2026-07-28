@@ -338,6 +338,28 @@ function translatePage(lang) {
   });
 
   updateBookingLinks(lang);
+
+  // Force Swiper testimonials to re-render and stay visible
+  try {
+    document.querySelectorAll('.swiper-slide').forEach(slide => {
+      slide.style.visibility = 'visible';
+      slide.style.opacity = '1';
+    });
+    document.querySelectorAll('.swiper-wrapper').forEach(wrapper => {
+      wrapper.style.visibility = 'visible';
+      wrapper.style.opacity = '1';
+    });
+    // Re-init swiper if available
+    if (window.Swiper) {
+      document.querySelectorAll('.testimonial-three-active').forEach(el => {
+        if (el.swiper) {
+          el.swiper.update();
+          el.swiper.slideTo(0);
+        }
+      });
+    }
+  } catch(e) {}
+
   localStorage.setItem('yazan-lang', lang);
 }
 
@@ -369,12 +391,12 @@ function updateBookingLinks(lang) {
   });
 }
 
-// RTL styles injection
+// RTL styles injection — preload Tajawal font
 function injectRTLStyles() {
   if (document.getElementById('rtl-styles')) return;
   const s = document.createElement('style');
   s.id = 'rtl-styles';
-  s.textContent = `.rtl-mode { font-family: 'Tajawal', 'Inter', sans-serif !important; }`;
+  s.textContent = `.rtl-mode, .rtl-mode * { font-family: 'Tajawal', 'Inter', sans-serif !important; }`;
   document.head.appendChild(s);
   const f = document.createElement('link');
   f.href = 'https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700;800&display=swap';
@@ -386,12 +408,12 @@ function initI18n() {
   injectRTLStyles();
   const saved = localStorage.getItem('yazan-lang');
   if (saved === 'ar') {
-    setTimeout(() => translatePage('ar'), 500);
+    setTimeout(() => translatePage('ar'), 200);
   }
 }
 
 if (document.readyState === 'loading') {
   document.addEventListener('DOMContentLoaded', initI18n);
 } else {
-  setTimeout(initI18n, 500);
+  setTimeout(initI18n, 200);
 }
